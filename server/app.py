@@ -9,12 +9,12 @@ from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
-model = load_model("./model/churn_model.h5")
+model = load_model("../model/churn_model.h5")
 
-gender_encoder = pickle.load(open('./gender_encoder.pkl','rb'))
-country_encoder = pickle.load(open('./country_encoder.pkl','rb'))
+gender_encoder = pickle.load(open('../gender_encoder.pkl','rb'))
+country_encoder = pickle.load(open('../country_encoder.pkl','rb'))
 
-scaler = pickle.load(open('./scaler.pkl','rb'))
+scaler = pickle.load(open('../scaler.pkl','rb'))
 
 @app.route('/')
 def home():
